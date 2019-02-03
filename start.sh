@@ -8,7 +8,7 @@
 #
 # Disable user promt
 DEBIAN_FRONTEND=noninteractive
-# Add repository PHP curent version
+# Add repository PHP current version
 sudo add-apt-repository ppa:ondrej/php
 # Update list of available packages
 apt-get update -y -q
@@ -72,7 +72,7 @@ sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F2
 sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://mirror.mephi.ru/mariadb/repo/10.3/ubuntu bionic main' -y
 # Update list of available packages
 apt-get update -y -q
-# Use md5 hash of your hostname to define a root password for MariDB
+# Use md5 hash of your hostname to define a root password for MariaDB
 password=$(hostname | md5sum | awk '{print $1}')
 debconf-set-selections <<< "mariadb-server-10.3 mysql-server/root_password password $password"
 debconf-set-selections <<< "mariadb-server-10.3 mysql-server/root_password_again password $password"
